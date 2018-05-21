@@ -1,0 +1,224 @@
+.love{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .inp{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 10px 10px 40px 10px;
+        border:1px solid pink;
+        border-radius: 10px;
+        width: 200px;
+        // display: none;
+        .title{
+            position: absolute;
+            left:50%;
+            top:-50%;
+            transform: translate(-50%,-50%);
+            font-size: 20px;
+            color: pink;    
+        }
+        label{
+            position: relative;
+            display: block;
+            border: 1px solid pink;
+            border-radius: 10px;
+            height: 30px;
+            width: 100%;
+            margin-bottom: 10px;
+            i{
+                position: absolute;
+                border: 1px solid pink;
+                border-radius: 10px 0 0 10px;
+                top: -1px;
+                left: -1px;
+                bottom: -1px;
+                line-height: 30px;
+                font-size: 30px;
+            }
+            input{
+                position: absolute;
+                box-sizing: border-box;
+                outline: none;
+                height: 29px;
+                width: 165px;
+                border-radius: 0 10px 10px 0;
+                // border: 1px solid pink;
+                border: none;
+                left: 35px;
+                top: 0.5px;
+                bottom: 0.5px;
+                color: pink - #111111;
+            }
+        }
+        .go-hide{
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            // border:none;
+            background-color: pink;
+            color: white;
+            width: 70px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 1px solid pink;
+        }
+    }
+    .like{
+        display: none;
+        // position: relative;
+        transition: all 0.5s;
+        // transform-origin: right bottom;
+        text-align: center;
+        line-height: 50px;
+        box-sizing: border-box;
+        font-size: 20px;
+        position: absolute;
+        top:50%;
+        left:30%;
+        width: 100px;
+        height: 50px;
+        background-color: pink + #222222;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        z-index: 2;
+        &.active{
+            transform : rotateZ(45deg);
+            border-radius : 75px 0 0 75px;
+            width :200px;
+            height : 125px;
+            background-color: red;
+            animation : gobig infinite alternate 0.5s;
+        }
+        p{
+        &.active{
+            position: absolute;
+            left:10px;
+            top : 35px;
+            transform :rotateZ(-90deg);
+            animation : fontsizetwo infinite alternate 0.5s;
+        }
+    }
+    .other-like{
+        //  border: 1px solid green;
+        transition: all 0.5s;
+        // transform-origin: left bottom;
+        text-align: center;
+        line-height: 50px;
+        box-sizing: border-box;
+        font-size: 20px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: pink + #222222;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        z-index: 2;
+        display: none;
+        &.active{
+            transform :rotateZ(90deg);
+            left :38px;
+            top :-37px;
+            border-radius :75px 0 0 75px;
+            width :200px;
+            height :125px;
+            background-color: red;
+        }
+        p{
+            &.active{
+                position: absolute;
+                left:10px;
+                top : 35px;
+                animation :fontsizetwo infinite alternate 0.5s;
+                }
+            }
+        }
+    }
+    .unlike{
+        display: none;
+        transition: all 0.5s;
+        text-align: center;
+        line-height: 50px;
+        box-sizing: border-box;
+        position: absolute;
+        font-size: 20px;
+        top:20%;
+        left:50%;
+        width: 100px;
+        height: 50px;
+        background-color: skyblue + #222222;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        &:hover{
+            background-color: greenyellow;
+        }
+    }
+}
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+@keyframes fontsize{
+    0% {
+        font-size: 20px;
+        color:black;
+    }
+    100%{
+        font-size: 30px;
+        color:red;
+    }
+}
+@keyframes fontsizetwo{
+    0% {
+        font-size: 15px;
+        color:black;
+    }
+    100%{
+        font-size: 20px;
+        color:rgb(255, 255, 255);
+    }
+}
+@keyframes gobig{
+    0%{
+        transform: rotateZ(45deg) scale3d(1,1,1)
+    }
+    100% {
+        transform: rotateZ(45deg) scale3d(1.2,1.2,1.2)
+
+    }
+}
